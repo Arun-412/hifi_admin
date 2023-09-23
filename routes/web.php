@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/login', [UserController::class,'login'])->name('auth.login');
 Route::get('/register', [UserController::class,'register'])->name('auth.register');
-Route::get('/authentication', [UserController::class,'authentication'])->name('auth.authentication');
+Route::post('/authentication', [UserController::class,'authentication'])->name('auth.authentication');
 Route::get('/viewOtp', [UserController::class,'viewOtp'])->name('auth.viewOtp');
-Route::get('/Otp', [UserController::class,'Otp'])->name('auth.Otp');
-Route::get('/verifyUser', [UserController::class,'verifyUser'])->name('auth.verifyUser');
+Route::post('/Otp', [UserController::class,'Otp'])->name('auth.Otp');
+Route::post('/verifyUser', [UserController::class,'verifyUser'])->name('auth.verifyUser');
