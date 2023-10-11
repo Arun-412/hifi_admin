@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\auth\UserController;
+
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Web Routes 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
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -14,12 +14,13 @@ use App\Http\Controllers\auth\UserController;
 */
 
 Route::get('/', function () {
-    return view('hifimoney');
+    return view('hifimoney');   
 });
 
-Route::get('/login', [UserController::class,'login'])->name('auth.login');
-Route::get('/register', [UserController::class,'register'])->name('auth.register');
-Route::post('/authentication', [UserController::class,'authentication'])->name('auth.authentication');
-Route::get('/viewOtp', [UserController::class,'viewOtp'])->name('auth.viewOtp');
-Route::post('/Otp', [UserController::class,'Otp'])->name('auth.Otp');
-Route::post('/verifyUser', [UserController::class,'verifyUser'])->name('auth.verifyUser');
+Route::get('/login',  ['as'=>'auth.login','uses'=>'auth\UserController@login']);
+Route::get('/register',  ['as'=>'auth.register','uses'=>'auth\UserController@register']);
+Route::post('/authentication',  ['as'=>'auth.authentication','uses'=>'auth\UserController@authentication']);
+Route::get('/viewOtp',  ['as'=>'auth.verifyOtp','uses'=>'auth\UserController@viewOtp']);
+Route::post('/Otp',  ['as'=>'auth.Otp','uses'=>'auth\UserController@verifyOtp']);
+Route::post('/verifyUser',  ['as'=>'auth.verifyUser','uses'=>'auth\UserController@verifyUser']);
+Route::get('/admin/dashboard',  ['as'=>'admin.dashboard','uses'=>'auth\UserController@admin_dashboard']);

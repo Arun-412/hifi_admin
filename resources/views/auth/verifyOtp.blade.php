@@ -7,7 +7,7 @@
             <div class="card-body">
               <!-- Logo -->
               <div class="app-brand justify-content-center">
-                <a href="{{ url('/admin/provider')}}" class="app-brand-link gap-2">
+                <a href="index.html" class="app-brand-link gap-2">
                   <span class="app-brand-logo demo">
                     <svg
                       width="25"
@@ -63,7 +63,7 @@
                       </g>
                     </svg>
                   </span>
-                  <span class="app-brand-text demo text-body fw-bolder">HIFI Money</span>
+                  <span class="app-brand-text demo text-body fw-bolder">HIFI FINTECH</span>
                 </a>
               </div>
               <!-- /Logo action="{{route('admin.dashboard')}}" method="get" -->

@@ -2,12 +2,6 @@
 	function dynamicActiveLink($path){
 		$path_config = array(
 			'dashboard'		=> array('admin/dashboard'),
-            'dmt'		=> array('admin/dmt'),
-            'user'		=> array('admin/user'),
-            'api'		=> array('admin/api'),
-            'service'		=> array('admin/service'),
-            'provider'		=> array('admin/provider'),
-            'report'		=> array('admin/report'),
 		);
 		foreach($path_config as $key=> $val)
 		{
@@ -65,7 +59,7 @@
                     </g>
                 </svg>
             </span>
-            <span class="app-brand-text demo menu-text fw-bolder ms-2">HIFI Money</span>
+            <span class="app-brand-text demo menu-text fw-bolder ms-2">HIFI FINTECH</span>
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -81,42 +75,6 @@
             <a href="{{route('admin.dashboard')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
-            </a>
-        </li>
-        <li class="{{$current_path == 'dmt' ? 'menu-item active' : 'menu-item'}}">
-            <a href="{{route('admin.dmt')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">DMT</div>
-            </a>
-        </li>
-        <li class="{{$current_path == 'user' ? 'menu-item active' : 'menu-item'}}">
-            <a href="{{route('admin.user')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">Users</div>
-            </a>
-        </li>
-        <li class="{{$current_path == 'api' ? 'menu-item active' : 'menu-item'}}">
-            <a href="{{route('admin.api')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">API</div>
-            </a>
-        </li>
-        <li class="{{$current_path == 'service' ? 'menu-item active' : 'menu-item'}}">
-            <a href="{{route('admin.service')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">Services</div>
-            </a>
-        </li>
-        <li class="{{$current_path == 'provider' ? 'menu-item active' : 'menu-item'}}">
-            <a href="{{route('admin.provider')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">Service Providers</div>
-            </a>
-        </li>
-        <li class="{{$current_path == 'report' ? 'menu-item active' : 'menu-item'}}">
-            <a href="{{route('admin.report')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">Report</div>
             </a>
         </li>
 </ul>

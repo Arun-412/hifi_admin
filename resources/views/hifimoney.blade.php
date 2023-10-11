@@ -1,6 +1,6 @@
 @include('layouts.webheader')
     <div class="card-header d-flex justify-content-between align-items-center">
-        <h2 class="mb-0" style="color:#5f61e6;">HIFI Money</h2>
+        <h2 class="mb-0" style="color:#5f61e6;">HIFI FINTECH</h2>
         <a href="{{route('auth.login')}}" class="menu-link btn btn-outline-primary">Login</a>
     </div>
     <section class="container">
@@ -56,8 +56,8 @@
     </section>
     <footer>
         <div class="card-header d-flex justify-content-between align-items-center">       
-            ©<script>document.write(new Date().getFullYear());</script>- All Copyrights Reserved by HIFI Technologies
-            <h6>Email us - Support@hifimoney.in</h6>
+            ©<script>document.write(new Date().getFullYear());</script>- All Copyrights Reserved by HIFI TECHNOLOGY
+            <h6>Email us - contact@hififintech.com</h6>
         </div>
     </footer>
 @include('layouts.webfooter')

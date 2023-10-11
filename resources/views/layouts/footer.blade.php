@@ -7,10 +7,10 @@
                     document.write(new Date().getFullYear());
                   </script>
                   - All Copyrights Reserved by
-                  <a href="https://hifimoney.in" target="_blank" class="footer-link fw-bolder">HIFI Technologies</a>
+                  <a href="https://hifimoney.in" target="_blank" class="footer-link fw-bolder">HIFI TECHNOLOGY</a>
                 </div>
                 <div>
-                  <a class="footer-link fw-bolder">support@hifimoney.in</a>
+                  <a class="footer-link fw-bolder">contact@hififintech.com</a>
                 </div>
               </div>
             </footer>

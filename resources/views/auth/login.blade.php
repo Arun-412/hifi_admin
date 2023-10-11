@@ -7,7 +7,7 @@
             <div class="card-body">
               <!-- Logo -->
               <div class="app-brand justify-content-center">
-                <a href="{{ url('/')}}" class="app-brand-link gap-2">
+                <a href="index.html" class="app-brand-link gap-2">
                   <span class="app-brand-logo demo">
                     <svg
                       width="25"
@@ -63,11 +63,11 @@
                       </g>
                     </svg>
                   </span>
-                  <span class="app-brand-text demo text-body fw-bolder">HIFI Money</span>
+                  <span class="app-brand-text demo text-body fw-bolder">HIFI FINTECH</span>
                 </a>
               </div>
               <!-- /Logo -->
-              <h4 class="mb-2">Welcome to HIFI Money! 👋</h4>
+              <h4 class="mb-2">Welcome to HIFI FINTECH! 👋</h4>
               <p class="mb-4">Please sign-in to your account and start the adventure</p>
               @if(session('failed'))
 						<div style="background-color:red;color:white;font-weight:800;padding:10px;border-radius:5px;">

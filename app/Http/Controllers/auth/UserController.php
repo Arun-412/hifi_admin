@@ -15,6 +15,9 @@ class UserController extends Controller
     function login (Request $request) {
         return view('auth.login');
     }
+    function admin_dashboard (Request $request) {
+        return view('admin.dashboard');
+    }
     public function verifyUser (Request $request) {
         try {
             $validate = Validator::make($request->all(), [
