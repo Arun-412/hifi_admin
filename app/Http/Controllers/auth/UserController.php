@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\auth;
-use App\Models\user;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Redirect;
@@ -27,9 +27,9 @@ class UserController extends Controller
             if($validate->fails()){
                 return back()->withInput()->withErrors($validate);
             }
-            else if(!empty(user::where(['user_name'=>$request->login_username])->exists()) || !empty(user::where(['phone'=>$request->login_username])->exists())) {
-                if(!empty(user::where(['user_name'=>$request->login_username])->exists())){
-                    $login_user = user::where(['user_name'=>$request->login_username])->first();
+            else if(!empty(User::where(['user_name'=>$request->login_username])->exists()) || !empty(User::where(['phone'=>$request->login_username])->exists())) {
+                if(!empty(User::where(['user_name'=>$request->login_username])->exists())){
+                    $login_user = User::where(['user_name'=>$request->login_username])->first();
                     if($login_user->password == hash("sha512",$request->login_password)) {
                         $login_user->phone_otp = 123456;
                         $login_user->access_token = hash("sha256", $login_user->phone);
@@ -42,7 +42,7 @@ class UserController extends Controller
                         return back()->withInput()->with('failed',"Invalid phone number or username");
                     }
                 }else {
-                    $login_user = user::where(['phone'=>$request->login_username])->first();
+                    $login_user = User::where(['phone'=>$request->login_username])->first();
                     if($login_user->password == hash("sha512",$request->login_password)) {
                         $login_user->phone_otp = 123456;
                         $login_user->access_token = hash("sha256", $login_user->phone);
@@ -80,18 +80,18 @@ class UserController extends Controller
                 return back()->withInput()->withErrors($validate);
                 // return response()->json(["status"=>false , "message" => $validate->errors()->toArray()[array_keys($validate->errors()->toArray())[0]][0]]);
             }
-            else if(!empty(user::where(['user_name'=>$request->username])->exists())){
+            else if(!empty(User::where(['user_name'=>$request->username])->exists())){
                 // return response()->json(["status"=>false , "message"=>'Username already exists']);
                 return back()->withInput()->with('failed',"Username already exists");
             }
-            else if(!empty(user::where(['phone'=>$request->phone_number])->exists())){
+            else if(!empty(User::where(['phone'=>$request->phone_number])->exists())){
                 return back()->withInput()->with('failed',"Phone Number already exists");
             }
-            else if(!empty(user::where(['email'=>$request->email])->exists())){
+            else if(!empty(User::where(['email'=>$request->email])->exists())){
                 return back()->withInput()->with('failed',"Email already exists");
             }
             else{
-                $add_user = new user;
+                $add_user = new User;
                 $add_user->user_name = $request->username;
                 $add_user->email = $request->email;
                 $add_user->email_verify = 0;
@@ -142,8 +142,8 @@ class UserController extends Controller
             if($validate->fails()){
                 return redirect('viewOtp')->with("failed","Invalid OTP");
             }else if(!empty($request->access)){
-                if(!empty(user::where(['access_token'=>$request->access])->exists())){
-                    if(!empty(user::where(['phone_otp'=>$request->verify_otp])->exists())){
+                if(!empty(User::where(['access_token'=>$request->access])->exists())){
+                    if(!empty(User::where(['phone_otp'=>$request->verify_otp])->exists())){
                         if($request->type){
                             if($request->type == "login"){
                                 return redirect()->route('admin.dashboard');
